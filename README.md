@@ -130,7 +130,7 @@ It should stay the same.
 
 To ensure that cookies are not changing open developer tools (probably F12) and navigate to place with cookies. You can reload the page to check if they are not changing.
   
-Alternatively you could set the domain name to localhost, and setup port-forward over the kubectl cmd to hit the relevant endpoints in this demo.
+Alternatively you could set the domain name to {IP-ADDRESS}.nip.io
   
 
 ## Appendix
