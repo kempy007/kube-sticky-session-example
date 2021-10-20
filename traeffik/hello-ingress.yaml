@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-service-tr
+  namespace: simple-apps
   annotations:
     traefik.ingress.kubernetes.io/affinity: "true"
     traefik.ingress.kubernetes.io/session-cookie-name: "sticky"  
@@ -20,6 +21,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hello-ingress-tr
+  namespace: simple-apps
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
