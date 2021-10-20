@@ -4,8 +4,6 @@ metadata:
   name: hello-ingress-tr
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/affinity: "true"
-    traefik.ingress.kubernetes.io/session-cookie-name: "sticky"
 spec:
   rules:
   - host: localhost
