@@ -23,7 +23,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: PathPrefix(`/`)
+  - match: PathPrefix(`/`) # Host(`test.example.com`)
     kind: Rule
     services:
     - name: hello-service
