@@ -1,0 +1,47 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-ingress
+  namespace: simple-apps
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "hello-cookie"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/affinity-mode: persistent
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hello-service
+          servicePort: hello-port
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: goodbye-ingress
+  namespace: simple-apps
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "goodbye-cookie"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/affinity-mode: persistent
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /v2/
+        backend:
+          serviceName: goodbye-service
+          servicePort: goodbye-port

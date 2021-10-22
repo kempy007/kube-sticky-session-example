@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: simple-apps
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello
+  namespace: simple-apps
+spec:
+  selector:
+    matchLabels:
+      app: hello
+      version: 1.0.0
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: hello
+        version: 1.0.0
+    spec:
+      containers:
+      - name: hello
+        image: "gcr.io/google-samples/hello-app:1.0"
+        env:
+        - name: "PORT"
+          value: "50001"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goodbye
+  namespace: simple-apps
+spec:
+  selector:
+    matchLabels:
+      app: goodbye
+      version: 2.0.0
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: goodbye
+        version: 2.0.0
+    spec:
+      containers:
+      - name: goodbye 
+        image: "gcr.io/google-samples/hello-app:2.0"
+        env:
+        - name: "PORT"
+          value: "50001"
