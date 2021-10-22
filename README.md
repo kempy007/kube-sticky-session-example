@@ -157,6 +157,20 @@ Hostname: hello-549db57dfd-4h8fb
 
 ## Appendix
 
+### Versions
+
+DATE: October 2021
+
+AKS Kubernetes: v1.20.9
+
+Nginx Deployment Image;
+k8s.gcr.io/ingress-nginx/controller:v1.0.4@sha256:545cff00370f28363dad31e3b59a94ba377854d3a11f18988f5f9e56841ef9ef
+
+Traefik Helm Release;
+NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+traefik traefik         1               2021-10-20 18:38:14.2237445 +0100 BST   deployed        traefik-10.6.0  2.5.3
+
+
 ### References
 
 - https://stackoverflow.com/questions/59272484/sticky-sessions-on-kubernetes-cluster
