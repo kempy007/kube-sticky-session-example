@@ -136,7 +136,7 @@ helm install traefik traefik/traefik -n traefik --create-namespace
 
 Now I found the ingress with annotation on the service did not obey sticky directives. So apply with following cmd
 
-`kubectl apply -f https://raw.githubusercontent.com/kempy007/kube-sticky-session-example/main/traeffik/hello-ingressRoute.yaml`
+`kubectl apply -f https://raw.githubusercontent.com/kempy007/kube-sticky-session-example/main/traefik/hello-ingressRoute.yaml`
 
 I have left hello-ingress.yaml for reference only.
 
